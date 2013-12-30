@@ -1,0 +1,10 @@
+$entityManager
+    ->createQuery("DELETE Entity e WHERE u.column = :val")
+    ->setParameter('val', "value")
+    ->execute();
+
+// OR
+$entity = $entityManager->getRepository('Entity')
+    ->findOneBy(array('column' => "value"));
+$entityManager->remove($entity);
+$entityManager->flush();

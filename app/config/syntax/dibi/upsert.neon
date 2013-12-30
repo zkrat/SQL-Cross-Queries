@@ -1,0 +1,9 @@
+$id = 123;
+$array = array(
+    "column" => "value"
+);
+
+dibi::query("INSERT INTO table %v", $array, "ON DUPLICATE KEY UPDATE column = %i", $id);
+
+// fluent
+dibi::insert("table", $array)->onDuplicateKeyUpdate("column = %i", $id)->execute();

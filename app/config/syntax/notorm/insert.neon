@@ -1,0 +1,5 @@
+$array = array(
+    "column" => "value"
+);
+
+$notorm->table()->insert($array);

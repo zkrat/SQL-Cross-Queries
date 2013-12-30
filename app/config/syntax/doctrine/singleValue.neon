@@ -1,0 +1,4 @@
+$column = $entityManager
+    ->createQuery('SELECT PARTIAL e.{column} FROM Entity e')
+    ->setMaxResults(1)
+    ->getSingleScalarResult();

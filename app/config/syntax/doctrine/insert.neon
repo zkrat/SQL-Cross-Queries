@@ -1,0 +1,6 @@
+$entity = new Entity;
+$entity->column = "value";
+$entityManager->persist($entity);
+$entityManager>flush();
+
+// Learn about entities: http://www.doctrine-project.org/docs/orm/2.0/en/reference/architecture.html#entities

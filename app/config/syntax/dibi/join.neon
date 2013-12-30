@@ -1,0 +1,7 @@
+$result = dibi::query("SELECT * FROM table JOIN table2 ON table.id = table2.table")->fetchAll();
+
+// fluent
+$result = dibi::select("*")->from("table")->join("table2")->on("table.id = table2.table")->fetchAll();
+
+// left join
+$result = dibi::select("*")->from("table")->leftJoin("table2")->on("table.id = table2.table")->fetchAll();

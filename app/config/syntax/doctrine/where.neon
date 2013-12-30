@@ -1,0 +1,32 @@
+$result = $entityManager->getRepository('Entity')
+    ->findBy(array('column' => 'value'));
+
+// AND
+$result = $entityManager->getRepository('Entity')
+    ->findBy(array('column' => 'value', 'column2' => 'value2'));
+
+// but when equals isn't enought, you have to use DQL
+$result = $entityManager
+    ->createQuery('SELECT e FROM Entity e WHERE e.column = :val1 AND e.column_2 != :val2')
+    ->setParameters(array('val1' => 'value', 'val2' => 'value_2'))
+    ->getResult();
+
+// OR
+$result = $entityManager
+    ->createQuery('SELECT e FROM Entity e WHERE e.column = :val1 OR e.column2 = :val2')
+    ->setParameters(array('val1' => 'value', 'val2' => 'value2'))
+    ->getResult();
+
+// IN
+$result = $entityManager
+    ->createQuery('SELECT e FROM Entity e WHERE e.column = :val1 OR e.column2 = :val2')
+    ->setParameters(array('val1' => 'value', 'val2' => 'value2'))
+    ->getResult();
+
+// LIKE
+$result = $entityManager
+    ->createQuery('SELECT e FROM Entity e WHERE e.column LIKE :val1')
+    ->setParameter('val1' => '%value')
+    ->getResult();
+
+// You have to place percents in parametr value

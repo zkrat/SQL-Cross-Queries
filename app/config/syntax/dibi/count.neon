@@ -1,0 +1,4 @@
+$count = dibi::query("SELECT COUNT(*) FROM table")->fetchSingle();
+
+// fluent
+$count = dibi::select("COUNT(*)")->from("table")->fetchSingle();

@@ -1,0 +1,30 @@
+$value = 'value';
+
+$result = $notorm->table('column', $value); // same for IN
+// OR alternative
+$result = $notorm->table(array('column' => $value));
+// column != value
+$result = $notorm->table('NOT column', $value); // same for IN
+// column > value
+$result = $notorm->table('column > ?', $value);
+
+// AND
+$value = 'value';
+$value2 = 'value2';
+$result = $notorm->table()
+    ->where(array(
+        'column' => $value,
+        'column2' => $value2
+    ));
+
+// alternative
+$result = $notorm->table()
+    ->where('column', $value)
+    ->where('column2', $value2);
+
+
+// OR
+$result = $notorm->table()->where('column = ? OR column2 = ?', 'value', 'value2');
+
+// LIKE
+$result = $notorm->table('column LIKE ?', "%$value");

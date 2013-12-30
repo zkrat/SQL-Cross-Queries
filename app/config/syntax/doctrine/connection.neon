@@ -1,0 +1,18 @@
+$config = Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(
+    array(__DIR__ . "/Entities"), // directories with entitites
+    TRUE, // development mode
+    __DIR__ . '/Proxies' // proxies directory
+);
+
+// Database connection information
+$connectionOptions = array(
+    'driver' => $driver,
+    'host' => $host,
+    'username' => $username,
+    'password' => $password,
+    'database' => $dbname,
+    'charset' => 'utf-8',
+);
+
+// Create EntityManager
+$entityManager = Doctrine\ORM\EntityManager::create($connectionOptions, $config);

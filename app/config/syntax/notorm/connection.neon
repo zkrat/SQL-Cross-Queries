@@ -1,0 +1,2 @@
+$pdo = new PDO("$driver:host=$host;dbname=$dbname", $username, $password);
+$notorm = new NotORM($pdo);

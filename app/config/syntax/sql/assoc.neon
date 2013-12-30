@@ -1,0 +1,5 @@
+// ARRAY
+SELECT `id`, `value` FROM `table`
+
+// ROWS
+SELECT * FROM `table`

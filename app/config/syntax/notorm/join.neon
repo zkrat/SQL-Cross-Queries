@@ -1,0 +1,2 @@
+// table.table2_id joins on table2.id
+$result = $notorm->table()->select('table.*, table2.column');

@@ -1,0 +1,6 @@
+$limit = 10;
+$offset = 5;
+$result = $entityManager
+    ->createQuery('SELECT e FROM Entity e')
+    ->setMaxResults($limit)->setFirstResult($offset)
+    ->getResult();

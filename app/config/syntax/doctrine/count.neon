@@ -1,0 +1,1 @@
+$count = $entityManager->createQuery('SELECT COUNT(e.id) FROM Entity e')->getSingleScalarResult();

@@ -1,0 +1,29 @@
+parameters:
+	typeList:
+		sql: 'SQL'
+		dibi: 'dibi'
+		doctrine: 'Doctrine'
+		netteDb: 'Nette Database'
+		notorm: 'NotORM'
+
+	commandList:
+		connection: 'DB connection'
+		where: 'WHERE'
+		insert: 'INSERT'
+		update: 'UPDATE'
+		delete: 'DELETE'
+		limitOffset: 'LIMIT, OFFSET'
+		count: 'COUNT(*)'
+		join: 'JOIN'
+		union: 'UNION'
+		lastId: 'Last record id'
+		upsert: 'UPSERT'
+		assoc: 'Assoc array'
+		singleValue: 'Single value'
+
+webloader:
+	css:
+		default:
+			files:
+				- %assetsDir%/css/bootstrap.min.css
+				- screen.less

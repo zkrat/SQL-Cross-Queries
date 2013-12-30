@@ -1,0 +1,1 @@
+$count = $notorm->table()->count();

@@ -1,0 +1,17 @@
+$array = dibi::query("SELECT id, column FROM table")->fetchPairs();
+
+// OR explicitly specify column names
+$array = dibi::query("SELECT id, column, column2 FROM table")->fetchPairs("id", "column");
+
+// OR automaticaly indexed array
+$array = dibi::query("SELECT column FROM table")->fetchPairs(NULL, "column");
+
+
+// fluent
+$array = dibi::select("id, column")->from("table")->fetchPairs();
+
+// OR explicitly specify column names
+$array = dibi::select("id, column, column2")->from("table")->fetchPairs("id", "column");
+
+// OR automaticaly indexed array
+$array = dibi::select("column")->from("table")->fetchPairs(NULL, "column");

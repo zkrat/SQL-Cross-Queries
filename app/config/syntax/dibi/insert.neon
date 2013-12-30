@@ -1,0 +1,8 @@
+$array = array(
+    "column" => "value"
+);
+
+dibi::query("INSERT INTO table %v", $array);
+
+// fluent
+dibi::insert("table", $array)->execute();

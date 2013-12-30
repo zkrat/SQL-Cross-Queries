@@ -1,0 +1,11 @@
+$result = dibi::query("SELECT * FROM table UNION SELECT * FROM table2")->fetchAll();
+
+// fluent - to reach expected query is a little bit tricky
+$fluent1 = dibi::select("*")->from("table1");
+$fluent2 = dibi::select("*")->from("table2");
+
+$result = $fluent1->union($fluent2);
+// produce SELECT * FROM "table1" UNION ( SELECT * FROM "table2" )
+
+$result = dibi::command()->{''}($fluent1)->union($fluent2);
+// produce ( SELECT * FROM "table1" ) UNION ( SELECT * FROM "table1" )

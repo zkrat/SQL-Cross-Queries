@@ -1,0 +1,13 @@
+$options = array(
+	'driver' => $driver,
+	'host' => $host,
+	'username' => $username,
+	'password' => $password,
+	'database' => $dbname,
+);
+
+// Static registry variant
+$dibi = dibi::connect($options);
+
+// Standalone object variant
+$dibi = new DibiConnection($options);

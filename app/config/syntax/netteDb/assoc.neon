@@ -1,0 +1,5 @@
+// assoc array
+$array = $ndb->table("table")->fetchPairs("id", "value");
+
+// assoc rows
+$rowsArray = $ndb->table("table")->fetchPairs("id");

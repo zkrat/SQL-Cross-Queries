@@ -1,0 +1,4 @@
+$column = dibi::query("SELECT column FROM table")->fetchSingle();
+
+// fluent
+$column = dibi::select("column")->from("table")->fetchSingle();

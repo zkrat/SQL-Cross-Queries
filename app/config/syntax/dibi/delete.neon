@@ -1,0 +1,4 @@
+dibi::query("DELETE FROM table WHERE column = %i", 123);
+
+// fluent
+dibi::delete("table")->where("column = %i", 123)->execute();

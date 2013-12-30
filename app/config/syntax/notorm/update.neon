@@ -1,0 +1,10 @@
+$data = array(
+    'column' => 'value'
+);
+
+$notorm->table('id', 123)->update($data);
+
+// OR
+$row = $notorm->table('id', 123)->fetch();
+$row['column'] = 'value';
+$row->update();

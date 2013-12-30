@@ -1,0 +1,1 @@
+$ndb->table("table")->where("column", 123)->fetch()->delete();

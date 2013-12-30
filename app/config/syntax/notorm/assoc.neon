@@ -1,0 +1,5 @@
+// assoc array
+$array = $notorm->table()->fetchPairs('id', 'value');
+
+// assoc rows
+$rows = $notorm->table()->fetchPairs('id');

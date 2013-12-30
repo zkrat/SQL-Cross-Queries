@@ -1,0 +1,8 @@
+$id = 123;
+$array = array(
+    "column" => "value"
+);
+
+$ndb->table("table")->where("column2", $id)->fetch()->update($array);
+// OR for primary key
+$ndb->table("table")->get($id)->update($array);

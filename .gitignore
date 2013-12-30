@@ -1,0 +1,6 @@
+/libs/
+/temp/
+/www/webtemp/
+/log
+sqlcq.sublime-project
+sqlcq.sublime-workspace

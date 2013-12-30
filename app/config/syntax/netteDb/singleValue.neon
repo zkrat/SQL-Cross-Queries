@@ -1,0 +1,2 @@
+$result = $ndb->table("table")->select("column")->fetch();
+$column = $result["column"];

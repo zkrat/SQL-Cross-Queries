@@ -1,0 +1,1 @@
+$notorm->table('id', 123)->delete();

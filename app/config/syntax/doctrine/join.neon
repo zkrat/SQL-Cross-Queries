@@ -1,0 +1,4 @@
+// Doctrine does fetch relations lazily, when you access them. But you can join them manualy
+$result = $entityManager->createQuery('SELECT e, r FROM Entity e JOIN e.related r')->getResult();
+
+// Learn associations: http://www.doctrine-project.org/docs/orm/2.0/en/reference/working-with-associations.html

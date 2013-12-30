@@ -1,0 +1,9 @@
+$id = 123;
+$array = array(
+	"column" => "value"
+);
+
+dibi::query("UPDATE table SET %a", $array, "WHERE column2 = %i", $id);
+
+// fluent
+dibi::update("table", $array)->where("column2 = %i", $id)->execute();

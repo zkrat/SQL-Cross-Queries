@@ -1,0 +1,1 @@
+SELECT * FROM `table` JOIN `table2` ON `table`.`id` = `table2`.`table`

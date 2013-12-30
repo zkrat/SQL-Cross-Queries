@@ -1,0 +1,2 @@
+$row = $ndb->table("table")->insert(...);
+$id = $row["id"];

@@ -1,0 +1,45 @@
+$result = dibi::query("SELECT * FROM table WHERE column = %s", 'fluent')->fetchAll();
+// fluent
+dibi::select("*")->from("table")->where("column = %s", 'fluent')->fetchAll();
+
+// AND
+$result = dibi::query("SELECT * FROM table WHERE column = %s AND column2 = %s", 'value1', 'value2')->fetchAll();
+// fluent
+$result = dibi::select("*")->from("table")->where("column = %s", $value)->and("column2 = %s", $value2)->fetchAll();
+// 2nd approach
+$values = array(
+	"column" => "value",
+	"column2" => "value2"
+);
+$result = dibi::select("*")->from("table")->where($values)->fetchAll();
+
+// OR
+$value = 'value';
+$value2 = 'value2';
+$result = dibi::query("SELECT * FROM table WHERE column = %s OR column2 = %s", $value, $value2)->fetchAll();
+// alternative
+$result = dibi::query("SELECT * FROM table WHERE %or", array(
+	'column' => $value,
+	'column2' => $value2
+))->fetchAll();
+// fluent
+$result = dibi::select("*")->from("table")->where("column = %s OR column2 = %s", $value, $value2)->fetchAll();
+// alternative
+$result = dibi::select("*")->from("table")->where("column = %s", $value)->or("column2 = %s", $value2)->fetchAll();
+// alternative
+$values = array(
+    "column" => "value",
+    "column2" => "value2"
+);
+$result = dibi::select("*")->from("table")->where("%or", $values)->fetchAll();
+
+// IN
+$array = array('value', 'value2');
+$result = dibi::query("SELECT * FROM table WHERE column IN %in", $array)->fetchAll();
+// alternative
+$result = dibi::select("*")->from("table")->where("column")->in($values)->fetchAll();
+
+// LIKE
+$result = dibi::query("SELECT * FROM table WHERE column LIKE %~like", 'value')->fetchAll();
+// fluent
+$result = dibi::select("*")->from("table")->where("column LIKE %~like", 'value')->fetchAll();

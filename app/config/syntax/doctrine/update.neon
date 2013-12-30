@@ -1,0 +1,17 @@
+$entityManager
+    ->createQuery("UPDATE Entity e SET e.column = :val WHERE u.column_2 = :val2")
+    ->setParameters(array('val' => "value", 'val2' = "value_2"))
+    ->execute();
+
+// OR
+$entity = $entityManager->getRepository('Entity')->find(1);
+$entity->column = "value";
+$entityManager->flush();
+
+// OR
+$entityManager->transactional(function ($entityManager) {
+   $entity = $entityManager->getRepository('Entity')->find(1);
+   $entity->column = "value";
+});
+
+// Learn locking: http://www.doctrine-project.org/docs/orm/2.0/en/reference/transactions-and-concurrency.html#locking-support

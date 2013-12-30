@@ -1,0 +1,3 @@
+$result = $notorm->table()->select(...)->where(...)->union(
+    $notorm->table2()->select(...)->where(...)
+);

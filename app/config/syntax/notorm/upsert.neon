@@ -1,0 +1,16 @@
+$id = 123;
+
+// unique key
+$unique = array(
+    "column" => $id
+);
+// insert values if the row doesn't exist
+$insert = array(
+    "column2" => "value2"
+);
+// update values otherwise
+$update = array(
+    "column3" => "value3"
+);
+
+$notorm->table()->insert_update($unique,$insert,$update);

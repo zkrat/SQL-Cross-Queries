@@ -1,0 +1,6 @@
+$limit = 10;
+$offset = 5;
+$result = dibi::query("SELECT * FROM table %lmt %ofs", $limit, $offset)->fetchAll();
+
+// fluent
+$result = dibi::select("*")->from("table")->limit($limit)->offset($offset)->fetchAll();

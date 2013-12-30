@@ -1,0 +1,52 @@
+{block #content}
+
+<a href="https://github.com/TomasVotruba/SQL-Cross-Queries" target="_blank">
+	<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
+</a>
+
+.row
+	.col-md-3
+		%h1 SQL Cross-Queries
+
+	.col-md-9
+		{foreach $typeList as $key => $name}
+			{if in_array($key, $filter)}
+				<a n:href="removeFromFilter!, key => $key" n:class="btn, btn-lg, btn-success">
+					{$name}
+				</a>
+
+			{else}
+				<a n:href="addToFilter!, key => $key" n:class="btn, btn-lg, btn-default">
+					{$name}
+				</a>
+			{/}
+		{/}
+
+%hr
+
+.row
+	.col-md-2#commandList
+		{foreach $commandList as $key => $value}
+			<a n:href="this, command => $key" n:class="btn, $key == $activeCommand ? btn-success : btn-default">
+				{$value}
+			</a>
+		{/}
+
+	.col-md-10
+		{foreach $filter as $key}
+			{if isset($codeList[$key])}
+				.panel.panel-default
+					.panel-heading {$typeList[$key]}
+					.panel-body
+						{capture $code}
+							{if isset($codeList[$key][$activeCommand])}
+								{$codeList[$key][$activeCommand]}
+
+							{else}
+								// undefined
+							{/}
+						{/}
+
+						{$code|highlight|noescape}
+			{/}
+		{/}

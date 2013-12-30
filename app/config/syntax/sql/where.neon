@@ -1,0 +1,16 @@
+SELECT * FROM `table` WHERE `column` = 'value'
+
+// AND
+SELECT * FROM `table` WHERE `column` = 'value' AND `column2` = 'value2'
+
+// OR
+SELECT * FROM `table` WHERE `column` = 'value' OR `column2` = 'value2'
+
+// IN
+SELECT * FROM `table` WHERE `column` IN ('value', 'value2')
+
+// LIKE
+SELECT * FROM `table` WHERE `column` LIKE 'value'
+SELECT * FROM `table` WHERE `column` LIKE '%value'
+SELECT * FROM `table` WHERE `column` LIKE '%value%'
+

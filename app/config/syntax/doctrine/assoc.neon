@@ -1,0 +1,21 @@
+// assoc array
+$entities = $entityManager
+    ->createQuery('SELECT PARTIAL e.{id, column} FROM Entity e')
+    ->getResult();
+$result = array();
+foreach ($entities as $entity) {
+    $result[$entity->id] = $entity->column;
+}
+
+// assoc rows
+$entities = $entityManager
+    ->createQuery('SELECT e FROM Entity e')
+    ->getResult();
+
+// OR
+$entities = $entityManager->getRepository('Entity')->findAll();
+
+$result = array();
+foreach ($queryResult as $entity) {
+    $result[$entity->id] = $entity;
+}

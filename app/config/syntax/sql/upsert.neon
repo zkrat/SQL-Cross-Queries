@@ -1,0 +1,1 @@
+INSERT INTO `table` (`column`) VALUES (`value`) ON DUPLICATE KEY UPDATE `column` = VALUES(`column`)
