@@ -6,13 +6,27 @@ use Nette\Utils\Finder;
 class HomepagePresenter extends Schmutzka\Application\UI\Presenter
 {
 	/** @persistent @var [] */
-	public $filter = ['sql'];
+	public $filter = [];
 
 	/** @persistent @var string */
-	public $command = 'connection';
+	public $command;
 
 	/** @inject @var Components\IGaControl */
 	public $gaControl;
+
+
+	public function startup()
+	{
+		parent::startup();
+
+		if ($this->command == NULL) {
+			$this->redirect('this', ['command' => 'where']);
+		}
+
+		if ($this->filter == NULL) {
+			$this->redirect('this', ['filter[]' => 'sql']);
+		}
+	}
 
 
 	public function createTemplate($class = NULL)
