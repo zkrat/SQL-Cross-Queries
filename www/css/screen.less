@@ -4,16 +4,32 @@ body {
 
 h1 {
 	font-size: 1.6em;
-	font-family: Georgia;
 	line-height: 2.1em;
 	margin: 0;
+	font-family: Georgia;
+
+	a, a:hover {
+		color: #DDD;
+	}
 }
 
-#commandList {
-	a {
-		width: 100%;
-		margin-bottom: .5em;
-		font-weight: normal;
+nav {
+	padding: .5em 0 .3em 0;
+}
+
+#content {
+	padding-top: 4em;
+
+	#commandList {
+		top: 0;
+		position: fixed;
+		margin-top: 5.5em;
+		width: 14%;
+
+		a {
+			width: 100%;
+			margin-bottom: .5em;
+		}
 	}
 }
 
